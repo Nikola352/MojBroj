@@ -1,0 +1,20 @@
+C:\Users\Ucenik\Documents\Nikola Jolovic\C#\MojBroj\bin\Debug\MojBroj.exe.config
+C:\Users\Ucenik\Documents\Nikola Jolovic\C#\MojBroj\bin\Debug\MojBroj.exe
+C:\Users\Ucenik\Documents\Nikola Jolovic\C#\MojBroj\bin\Debug\MojBroj.pdb
+C:\Users\Ucenik\Documents\Nikola Jolovic\C#\MojBroj\obj\Debug\MojBroj.csproj.AssemblyReference.cache
+C:\Users\Ucenik\Documents\Nikola Jolovic\C#\MojBroj\obj\Debug\MojBroj.Form1.resources
+C:\Users\Ucenik\Documents\Nikola Jolovic\C#\MojBroj\obj\Debug\MojBroj.Properties.Resources.resources
+C:\Users\Ucenik\Documents\Nikola Jolovic\C#\MojBroj\obj\Debug\MojBroj.csproj.GenerateResource.cache
+C:\Users\Ucenik\Documents\Nikola Jolovic\C#\MojBroj\obj\Debug\MojBroj.csproj.CoreCompileInputs.cache
+C:\Users\Ucenik\Documents\Nikola Jolovic\C#\MojBroj\obj\Debug\MojBroj.exe
+C:\Users\Ucenik\Documents\Nikola Jolovic\C#\MojBroj\obj\Debug\MojBroj.pdb
+F:\NIKOLA_JOLOVIC\programiranje\C#\MojBroj\bin\Debug\MojBroj.exe.config
+F:\NIKOLA_JOLOVIC\programiranje\C#\MojBroj\bin\Debug\MojBroj.exe
+F:\NIKOLA_JOLOVIC\programiranje\C#\MojBroj\bin\Debug\MojBroj.pdb
+F:\NIKOLA_JOLOVIC\programiranje\C#\MojBroj\obj\Debug\MojBroj.csproj.AssemblyReference.cache
+F:\NIKOLA_JOLOVIC\programiranje\C#\MojBroj\obj\Debug\MojBroj.Form1.resources
+F:\NIKOLA_JOLOVIC\programiranje\C#\MojBroj\obj\Debug\MojBroj.Properties.Resources.resources
+F:\NIKOLA_JOLOVIC\programiranje\C#\MojBroj\obj\Debug\MojBroj.csproj.GenerateResource.cache
+F:\NIKOLA_JOLOVIC\programiranje\C#\MojBroj\obj\Debug\MojBroj.csproj.CoreCompileInputs.cache
+F:\NIKOLA_JOLOVIC\programiranje\C#\MojBroj\obj\Debug\MojBroj.exe
+F:\NIKOLA_JOLOVIC\programiranje\C#\MojBroj\obj\Debug\MojBroj.pdb
