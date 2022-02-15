@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +14,7 @@ namespace MojBroj
 
 		bool stopBtnPressed = false;
 		bool confirmButton = false;
+		bool playAgainButton = false;
 
 		int intervalCnt = 0;
 
@@ -79,20 +76,21 @@ namespace MojBroj
 			}
 
 			nums[idx++] = await GetValue(bBtn, 'b');
+			stopBtnPressed = false;
 
 			nums[idx++] = await GetValue(cBtn, 'c');
-
 			stopBtnPressed = false;
 		}
 
-		private int bitcnt(int mask)
+		private void clearOutput()
 		{
-			int c = 0;
-			for (; mask > 0; mask >>= 1)
-				c += mask & 1;
-			return c;
+			n100tb.Text = n10tb.Text = n1tb.Text =
+				a1Btn.Text = a2Btn.Text = a3Btn.Text =
+				a4Btn.Text = bBtn.Text = cBtn.Text = "";
+			expTb.Text = compTb.Text = "";
+			pointsLabel.Text = "";
 		}
-
+		
 		private struct From
 		{
 			public int a1, a2, mask1, mask2;
@@ -130,7 +128,7 @@ namespace MojBroj
 			if (cf.p1) s1 += ")";
 			if (cf.p2) s2 += ")";
 
-			return s1 + from[i, mask].op + s2;
+			return s1 + cf.op + s2;
 		}
 
 		private int calculate()
@@ -217,6 +215,21 @@ namespace MojBroj
 					return (n + i);
 				}
 
+				for (int mask = 0; mask < (1 << 6); mask++)
+				{
+					if (dp[n - i, mask])
+					{
+						res = getExp(n - i, mask, from);
+						found = true;
+						break;
+					}
+				}
+
+				if (found)
+				{
+					compTb.Text = res + "=" + (n - i).ToString();
+					return (n - i);
+				}
 			}
 
 			return 0;
@@ -225,6 +238,10 @@ namespace MojBroj
 		private async void StartGame()
 		{
 			disableAllButtons();
+			stopBtnPressed = confirmButton = playAgainButton = false;
+			intervalCnt = 0;
+
+			clearOutput();
 
 			await GetAllNums();
 
@@ -266,8 +283,6 @@ namespace MojBroj
 
 		private void confirmBtnHandler()
 		{
-			bool markPressed = true;
-
 			if (stopBtnPressed) return; // ako 2 puta klkne "potvrdi"
 
 			disableAllButtons();
@@ -303,17 +318,21 @@ namespace MojBroj
 
 			pointsLabel.Text = pts.ToString();
 
+			stopBtnPressed = true;
 
-			stopBtnPressed = markPressed;
+			Task.Delay(1000);
+			stopBtn.Text = "Играј поново";
+			playAgainButton = true;
 		}
 
+		private void playAgainBtnHandler()
+		{
+			stopBtn.Text = "СТОЈ!";
+			StartGame();
+		}
+		
 		private void disableAllButtons()
 		{
-			foreach (var tbName in ntbs)
-			{
-				Button btn = this.Controls[tbName] as Button;
-				btn.Enabled = false;
-			}
 			foreach (var tbName in atbs)
 			{
 				Button btn = this.Controls[tbName] as Button;
@@ -325,11 +344,6 @@ namespace MojBroj
 
 		private void enableAllButtons()
 		{
-			foreach (var tbName in ntbs)
-			{
-				Button btn = this.Controls[tbName] as Button;
-				btn.Enabled = true;
-			}
 			foreach (var tbName in atbs)
 			{
 				Button btn = this.Controls[tbName] as Button;
@@ -446,7 +460,11 @@ namespace MojBroj
 
 		private void stopBtn_Click(object sender, EventArgs e)
 		{
-			if (confirmButton) // ako je postalo "potvrdi" dugme
+			if (playAgainButton) // ako je postalo "igraj ponovo" dugme
+			{
+				playAgainBtnHandler();
+			}
+			else if (confirmButton) // ako je postalo "potvrdi" dugme
 			{
 				confirmBtnHandler();
 			} else

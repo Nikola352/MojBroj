@@ -80,7 +80,7 @@ namespace MojBroj
 			this.stopBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.stopBtn.Location = new System.Drawing.Point(339, 372);
 			this.stopBtn.Name = "stopBtn";
-			this.stopBtn.Size = new System.Drawing.Size(119, 45);
+			this.stopBtn.Size = new System.Drawing.Size(146, 50);
 			this.stopBtn.TabIndex = 0;
 			this.stopBtn.Text = "СТОЈ!";
 			this.stopBtn.UseMnemonic = false;
@@ -194,7 +194,6 @@ namespace MojBroj
 			// 
 			// compTb
 			// 
-			this.compTb.Enabled = false;
 			this.compTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.compTb.Location = new System.Drawing.Point(377, 296);
 			this.compTb.Name = "compTb";
@@ -329,6 +328,7 @@ namespace MojBroj
 			// timerBg
 			// 
 			this.timerBg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.timerBg.Enabled = false;
 			this.timerBg.Location = new System.Drawing.Point(790, 50);
 			this.timerBg.Multiline = true;
 			this.timerBg.Name = "timerBg";
@@ -337,7 +337,9 @@ namespace MojBroj
 			// 
 			// timerFg
 			// 
-			this.timerFg.BackColor = System.Drawing.SystemColors.InfoText;
+			this.timerFg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+			this.timerFg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.timerFg.Enabled = false;
 			this.timerFg.Location = new System.Drawing.Point(790, 50);
 			this.timerFg.Multiline = true;
 			this.timerFg.Name = "timerFg";
