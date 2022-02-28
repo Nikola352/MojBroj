@@ -89,6 +89,7 @@ namespace MojBroj
 				a4Btn.Text = bBtn.Text = cBtn.Text = "";
 			expTb.Text = compTb.Text = "";
 			pointsLabel.Text = "";
+			timerFg.Height = 0;
 		}
 		
 		private struct From
